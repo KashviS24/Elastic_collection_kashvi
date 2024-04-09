@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(79, 78, 78);
+    background-color: rgb(46, 48, 44);
     overflow-x: hidden; 
 }
 
@@ -46,7 +46,15 @@ figcaption a {
     color: white;
 }
 
+.filters{
+    width: 100vw;
+    height: 40px;
+}
+
 .filters button{
     font-family: MaxiRound-Regular;
     float: left;
+    border-radius: 45%;
+    padding: 15px;
+    margin: 1px;
 }

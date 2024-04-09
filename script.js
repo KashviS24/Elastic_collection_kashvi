@@ -72,6 +72,20 @@ portraitImg.style.left = '50%';
 portraitImg.style.transform = 'translate(-50%, -50%)';
 imagesContainer.appendChild(portraitImg);
 
+// Function to filter objects based on criteria
+function filterObjects(criteria) {
+    let filteredObjects = [];
+    if (criteria === 'all') {
+        filteredObjects = allObjects; // Show all objects
+    } else {
+        filteredObjects = allObjects.filter(object => {
+            // Check if the object contains the selected general type
+            return object.type1 === criteria || object.type2 === criteria;
+        });
+    }
+    renderObjects(filteredObjects); // Render filtered objects
+}
+
 // Add event listeners for hover effect
 wrapper.addEventListener('mouseenter', function() {
     sceneryImg.style.opacity = '0.7'; // Reduce opacity of scenery image on hover
