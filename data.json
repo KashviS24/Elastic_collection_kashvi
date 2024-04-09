@@ -1,301 +1,301 @@
 [
   {
     "title": "Red",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait1.jpg",
     "scenery": "sceneries/scenery1.jpg"
   },
   {
     "title": "Blue",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait2.jpg",
     "scenery": "sceneries/scenery2.jpg"
   },
   {
     "title": "Green",
-    "type": ["India", "India"],
+    "type": ["all","India", "India"],
     "portrait": "portraits/portrait3.jpg",
     "scenery": "sceneries/scenery3.jpg"
   },
   {
     "title": "Yellow",
-    "type": ["Europe", "USA"],
+    "type": ["all","Europe", "USA"],
     "portrait": "portraits/portrait4.jpg",
     "scenery": "sceneries/scenery4.jpg"
   },
   {
     "title": "Orange",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait5.jpg",
     "scenery": "sceneries/scenery5.jpg"
   },
   {
     "title": "Purple",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait6.jpg",
     "scenery": "sceneries/scenery6.jpg"
   },
   {
     "title": "Pink",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait7.jpg",
     "scenery": "sceneries/scenery7.jpg"
   },
   {
     "title": "Turquoise",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait8.jpg",
     "scenery": "sceneries/scenery8.jpg"
   },
   {
     "title": "Cyan",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait9.jpg",
     "scenery": "sceneries/scenery9.jpg"
   },
   {
     "title": "Magenta",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait10.jpg",
     "scenery": "sceneries/scenery10.jpg"
   },
   {
     "title": "Lavender",
-    "type": ["India", "India"],
+    "type": ["all","India", "India"],
     "portrait": "portraits/portrait11.jpg",
     "scenery": "sceneries/scenery11.jpg"
   },
   {
     "title": "Indigo",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait12.jpg",
     "scenery": "sceneries/scenery12.jpg"
   },
   {
     "title": "Violet",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait13.jpg",
     "scenery": "sceneries/scenery13.jpg"
   },
   {
     "title": "Maroon",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait14.jpg",
     "scenery": "sceneries/scenery14.jpg"
   },
   {
     "title": "Teal",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait15.jpg",
     "scenery": "sceneries/scenery15.jpg"
   },
   {
     "title": "Coral",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait16.jpg",
     "scenery": "sceneries/scenery16.jpg"
   },
   {
     "title": "Olive",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait17.jpg",
     "scenery": "sceneries/scenery17.jpg"
   },
   {
     "title": "Peach",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait18.jpg",
     "scenery": "sceneries/scenery18.jpg"
   },
   {
     "title": "Gold",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait19.jpg",
     "scenery": "sceneries/scenery19.jpg"
   },
   {
     "title": "Silver",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait20.jpg",
     "scenery": "sceneries/scenery20.jpg"
   },
   {
     "title": "Charcoal",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait21.jpg",
     "scenery": "sceneries/scenery21.jpg"
   },
   {
     "title": "Beige",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait22.jpg",
     "scenery": "sceneries/scenery22.jpg"
   },
   {
     "title": "Brown",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait23.jpg",
     "scenery": "sceneries/scenery23.jpg"
   },
   {
     "title": "Tan",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait24.jpg",
     "scenery": "sceneries/scenery24.jpg"
   },
   {
     "title": "Cream",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait25.jpg",
     "scenery": "sceneries/scenery25.jpg"
   },
   {
     "title": "Ivory",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait26.jpg",
     "scenery": "sceneries/scenery26.jpg"
   },
   {
     "title": "Slate",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait27.jpg",
     "scenery": "sceneries/scenery27.jpg"
   },
   {
     "title": "Periwinkle",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait28.jpg",
     "scenery": "sceneries/scenery28.jpg"
   },
   {
     "title": "Crimson",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait29.jpg",
     "scenery": "sceneries/scenery29.jpg"
   },
   {
     "title": "Ruby",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait30.jpg",
     "scenery": "sceneries/scenery30.jpg"
   },
   {
     "title": "Emerald",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait31.jpg",
     "scenery": "sceneries/scenery31.jpg"
   },
   {
     "title": "Sapphire",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait32.jpg",
     "scenery": "sceneries/scenery32.jpg"
   },
   {
     "title": "Azure",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait33.jpg",
     "scenery": "sceneries/scenery33.jpg"
   },
   {
     "title": "Lemon",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait34.jpg",
     "scenery": "sceneries/scenery34.jpg"
   },
   {
     "title": "Mint",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait35.jpg",
     "scenery": "sceneries/scenery35.jpg"
   },
   {
     "title": "Lilac",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait36.jpg",
     "scenery": "sceneries/scenery36.jpg"
   },
   {
     "title": "Tangerine",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait37.jpg",
     "scenery": "sceneries/scenery37.jpg"
   },
   {
     "title": "Fuchsia",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait38.jpg",
     "scenery": "sceneries/scenery38.jpg"
   },
   {
     "title": "Burgundy",
-    "type": ["USA", "Europe"],
+    "type": ["all","USA", "Europe"],
     "portrait": "portraits/portrait39.jpg",
     "scenery": "sceneries/scenery39.jpg"
   },
   {
     "title": "Aquamarine",
-    "type": ["USA", "Europe"],
+    "type": ["all","USA", "Europe"],
     "portrait": "portraits/portrait40.jpg",
     "scenery": "sceneries/scenery40.jpg"
   },
   {
     "title": "Mauve",
-    "type": ["India", "Europe"],
+    "type": ["all","India", "Europe"],
     "portrait": "portraits/portrait41.jpg",
     "scenery": "sceneries/scenery41.jpg"
   },
   {
     "title": "Orchid",
-    "type": ["India", "Europe"],
+    "type": ["all","India", "Europe"],
     "portrait": "portraits/portrait42.jpg",
     "scenery": "sceneries/scenery42.jpg"
   },
   {
     "title": "Salmon",
-    "type": ["USA", "USA"],
+    "type": ["all","USA", "USA"],
     "portrait": "portraits/portrait43.jpg",
     "scenery": "sceneries/scenery43.jpg"
   },
   {
     "title": "Sky Blue",
-    "type": ["Europe", "USA"],
+    "type": ["all","Europe", "USA"],
     "portrait": "portraits/portrait44.jpg",
     "scenery": "sceneries/scenery44.jpg"
   },
   {
     "title": "Navy",
-    "type": ["Europe", "USA"],
+    "type": ["all","Europe", "USA"],
     "portrait": "portraits/portrait45.jpg",
     "scenery": "sceneries/scenery45.jpg"
   },
   {
     "title": "Mustard",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait46.jpg",
     "scenery": "sceneries/scenery46.jpg"
   },
   {
     "title": "Olive Green",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait47.jpg",
     "scenery": "sceneries/scenery47.jpg"
   },
   {
     "title": "Rose",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait48.jpg",
     "scenery": "sceneries/scenery48.jpg"
   },
   {
     "title": "Sand",
-    "type": ["India", "Europe"],
+    "type": ["all","India", "Europe"],
     "portrait": "portraits/portrait49.jpg",
     "scenery": "sceneries/scenery49.jpg"
   },
   {
     "title": "Coral Reef",
-    "type": ["India", "USA"],
+    "type": ["all","India", "USA"],
     "portrait": "portraits/portrait50.jpg",
     "scenery": "sceneries/scenery50.jpg"
   }

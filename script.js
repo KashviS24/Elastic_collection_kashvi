@@ -53,61 +53,51 @@ document.addEventListener("DOMContentLoaded", function() {
         wrapper.appendChild(imagesContainer);
 
         // Scenery
-    const sceneryImg = document.createElement('img');
-    sceneryImg.src = object.scenery;
-    sceneryImg.style.position = 'absolute';
-    sceneryImg.style.top = '50%';
-    sceneryImg.style.left = '50%';
-    sceneryImg.style.transform = 'translate(-50%, -50%)';
-    sceneryImg.style.opacity = '100%';
-    imagesContainer.appendChild(sceneryImg);
+        const sceneryImg = document.createElement('img');
+        sceneryImg.src = object.scenery;
+        sceneryImg.style.position = 'absolute';
+        sceneryImg.style.top = '50%';
+        sceneryImg.style.left = '50%';
+        sceneryImg.style.transform = 'translate(-50%, -50%)';
+        sceneryImg.style.opacity = '1'; // Set default opacity to 1
+        imagesContainer.appendChild(sceneryImg);
 
-    // Portrait
-    const portraitImg = document.createElement('img');
-portraitImg.src = object.portrait;
-portraitImg.classList.add('portrait-img'); 
-portraitImg.style.position = 'absolute';
-portraitImg.style.top = '50%';
-portraitImg.style.left = '50%';
-portraitImg.style.transform = 'translate(-50%, -50%)';
-imagesContainer.appendChild(portraitImg);
+        // Portrait
+        const portraitImg = document.createElement('img');
+        portraitImg.src = object.portrait;
+        portraitImg.classList.add('portrait-img'); 
+        portraitImg.style.position = 'absolute';
+        portraitImg.style.top = '50%';
+        portraitImg.style.left = '50%';
+        portraitImg.style.transform = 'translate(-50%, -50%)';
+        portraitImg.style.opacity = '0'; // Set default opacity to 0
+        imagesContainer.appendChild(portraitImg);
 
-// Function to filter objects based on criteria
-function filterObjects(criteria) {
-    let filteredObjects = [];
-    if (criteria === 'all') {
-        filteredObjects = allObjects; // Show all objects
-    } else {
-        filteredObjects = allObjects.filter(object => {
-            // Check if the object contains the selected general type
-            return object.type1 === criteria || object.type2 === criteria;
+        // Add event listeners for hover effect
+        wrapper.addEventListener('mouseenter', function() {
+            sceneryImg.style.opacity = '0'; // Hide scenery image on hover
+            portraitImg.style.opacity = '1'; // Show portrait image on hover
         });
+
+        wrapper.addEventListener('mouseleave', function() {
+            sceneryImg.style.opacity = '1'; // Show scenery image on mouse leave
+            portraitImg.style.opacity = '0'; // Hide portrait image on mouse leave
+        });
+
+        // Append to DOM
+        document.getElementById('randomObjectsContainer').appendChild(wrapper);
     }
-    renderObjects(filteredObjects); // Render filtered objects
-}
 
-// Add event listeners for hover effect
-wrapper.addEventListener('mouseenter', function() {
-    sceneryImg.style.opacity = '0.7'; // Reduce opacity of scenery image on hover
-    portraitImg.style.opacity = '1';
-});
-
-wrapper.addEventListener('mouseleave', function() {
-    sceneryImg.style.opacity = '0.7'; // Restore opacity of scenery image on mouse leave
-    portraitImg.style.opacity = '0';
-});
-         // Append to DOM
-    document.getElementById('randomObjectsContainer').appendChild(wrapper);
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
     let previousObjects = []; // Track the last 15 generated objects
+    let allObjects = []; // Track all objects for filtering
 
     // Fetch JSON data
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
+            allObjects = data; // Store all objects for filtering
+
             // Event listener for click on figure
             document.addEventListener('click', function(event) {
                 if (event.target.closest('figure')) {
@@ -117,8 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             // Initial rendering
-            let initialRandomObject = getRandomUniqueObject(data);
-            renderMarkup(initialRandomObject);
+            renderObjects(data);
         })
         .catch(error => console.error('Error fetching data:', error));
 
@@ -129,6 +118,32 @@ document.addEventListener("DOMContentLoaded", function() {
         // ...
     }
 
+    // Function to render objects based on criteria
+    function renderObjects(objects) {
+        // Clear existing objects
+        document.getElementById('randomObjectsContainer').innerHTML = '';
+        
+        // Render filtered objects
+        objects.forEach(object => {
+            renderMarkup(object);
+        });
+    }
+
+    // Function to filter objects based on criteria
+    function filterObjects(criteria) {
+    const figures = document.querySelectorAll('figure');
+    figures.forEach(figure => {
+        const type = figure.dataset.item; // Get the type of the object
+        if (criteria === 'all' || type === criteria) {
+            // Show the object if it matches the criteria or if 'all' is selected
+            figure.style.display = 'block';
+        } else {
+            // Hide the object if it does not match the criteria
+            figure.style.display = 'none';
+        }
+    });
+    }
+    
     // Function to get a random object that is not too similar to the last 15 objects
     function getRandomUniqueObject(data) {
         let newRandomObject = null;
@@ -165,5 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         return false;
     }
+});
+
 });
 
