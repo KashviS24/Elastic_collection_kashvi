@@ -40,16 +40,13 @@ figure img{
     transition: opacity 0.3s ease;
 }
 
-.portrait-img {
-    opacity: 0;
-}
-
-figure:hover .portrait-img {
-    opacity: 1;
-}
-
 figcaption a {
     font-family: MaxiRound-Regular;
     text-decoration: none;
     color: white;
+}
+
+.filters button{
+    font-family: MaxiRound-Regular;
+    float: left;
 }
