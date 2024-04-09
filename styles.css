@@ -52,6 +52,8 @@ figcaption a {
 }
 
 .filters button{
+    color: white;
+    background-color: black;
     font-family: MaxiRound-Regular;
     float: left;
     border-radius: 45%;
