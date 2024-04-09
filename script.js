@@ -65,12 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
     // Portrait
     const portraitImg = document.createElement('img');
 portraitImg.src = object.portrait;
-portraitImg.classList.add('portrait-img'); // Add class for targeting in CSS
+portraitImg.classList.add('portrait-img'); 
 portraitImg.style.position = 'absolute';
 portraitImg.style.top = '50%';
 portraitImg.style.left = '50%';
 portraitImg.style.transform = 'translate(-50%, -50%)';
 imagesContainer.appendChild(portraitImg);
+
+// Add event listeners for hover effect
+wrapper.addEventListener('mouseenter', function() {
+    sceneryImg.style.opacity = '0.7'; // Reduce opacity of scenery image on hover
+    portraitImg.style.opacity = '1';
+});
+
+wrapper.addEventListener('mouseleave', function() {
+    sceneryImg.style.opacity = '0.7'; // Restore opacity of scenery image on mouse leave
+    portraitImg.style.opacity = '0';
+});
          // Append to DOM
     document.getElementById('randomObjectsContainer').appendChild(wrapper);
     }
@@ -139,5 +150,46 @@ document.addEventListener("DOMContentLoaded", function() {
             return true;
         }
         return false;
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let allObjects = []; // Store all objects
+    let filteredObjects = []; // Store filtered objects
+
+    // Fetch JSON data
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            allObjects = data; // Store all objects
+            filteredObjects = data; // Initially, set filtered objects to all objects
+            renderObjects(filteredObjects); // Render initially
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+    // Function to render objects
+    function renderObjects(objects) {
+        const container = document.getElementById('randomObjectsContainer');
+        container.innerHTML = ''; // Clear previous content
+
+        objects.forEach(object => {
+            const wrapper = document.createElement('figure');
+            // Render the object as you did before
+            // ...
+            container.appendChild(wrapper);
+        });
+    }
+
+    // Function to filter objects based on criteria
+    function filterObjects(criteria) {
+        if (criteria === 'all') {
+            filteredObjects = allObjects; // Show all objects
+        } else {
+            filteredObjects = allObjects.filter(object => {
+                // Check if the object contains the selected general type
+                return object.type1 === criteria || object.type2 === criteria;
+            });
+        }
+        renderObjects(filteredObjects); // Render filtered objects
     }
 });
