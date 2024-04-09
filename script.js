@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Container for images
         const imagesContainer = document.createElement('div');
+        imagesContainer.classList.add('images-container'); // Add class
         imagesContainer.style.position = 'relative';
         imagesContainer.style.width = '100%';
         imagesContainer.style.height = '100%';
@@ -63,14 +64,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Portrait
     const portraitImg = document.createElement('img');
-    portraitImg.src = object.portrait;
-    portraitImg.style.position = 'absolute';
-    portraitImg.style.top = '50%';
-    portraitImg.style.left = '50%';
-    portraitImg.style.transform = 'translate(-50%, -50%)';
-    portraitImg.style.opacity = '0';
-    imagesContainer.appendChild(portraitImg);
-
+portraitImg.src = object.portrait;
+portraitImg.classList.add('portrait-img'); // Add class for targeting in CSS
+portraitImg.style.position = 'absolute';
+portraitImg.style.top = '50%';
+portraitImg.style.left = '50%';
+portraitImg.style.transform = 'translate(-50%, -50%)';
+imagesContainer.appendChild(portraitImg);
          // Append to DOM
     document.getElementById('randomObjectsContainer').appendChild(wrapper);
     }
