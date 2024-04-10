@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     }
-    
+
     // Function to get a random object that is not too similar to the last 15 objects
     function getRandomUniqueObject(data) {
         let newRandomObject = null;
@@ -183,4 +183,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 });
+
+
 
