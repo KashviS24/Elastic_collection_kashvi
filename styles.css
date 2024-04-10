@@ -8,6 +8,18 @@ body{
     src: url(Fonts/MaxiRound-Regular.otf);
 }
 
+@font-face {
+    font-family: MaxiRound-Bold;
+    src: url(Fonts/MaxiRound-Bold.otf);
+}
+
+h1{
+    font-family: MaxiRound-Bold;
+    text-align: left;
+    color:azure;
+    margin-left: 20px;
+}
+
 figcaption {
     position: absolute;
     bottom: -1.5em;
@@ -52,7 +64,7 @@ figcaption a {
 }
 
 .filters button{
-    color: white;
+    color: azure;
     background-color: black;
     font-family: MaxiRound-Regular;
     float: left;
