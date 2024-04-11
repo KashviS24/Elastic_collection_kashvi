@@ -395,5 +395,20 @@ function addRandomTask() {
     tasksContainer.appendChild(generateTask(randomTask));
 }
 
+function initializeEventListeners() {
+    filters.location.addEventListener('change', handleLocationFilterChange);
+
+    const clickSound = document.getElementById("clickSound");
+
+    tasksContainer.addEventListener("click", function(event) {
+        if (event.target.closest(".task")) {
+            // Play the click sound
+            clickSound.play();
+            // Add a random task
+            addRandomTask();
+        }
+    });
+}
+
 initializeEventListeners();
 renderInitialTask();
