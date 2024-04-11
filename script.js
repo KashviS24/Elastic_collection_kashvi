@@ -300,7 +300,7 @@ const tasks = [
       "scenery": "sceneries/scenery50.jpg"
     }
   ];
-
+  
   const filters = {
     location: document.querySelector('#location-filter')
 };
@@ -312,8 +312,8 @@ function generateTask(task) {
     return `
         <div class="task">
             <p>${task.title}</p>
-            <img src="${task.portrait}" alt="${task.title}">
-            <img src="${task.scenery}" alt="${task.title}">
+            <img src="${task.scenery}" alt="${task.title}" class="scenery"> <!-- Scenery image -->
+            <img src="${task.portrait}" alt="${task.title}" class="portrait"> <!-- Portrait image -->
         </div>
     `;
 }
@@ -339,9 +339,3 @@ function initializeEventListeners() {
 
 initializeEventListeners();
 renderTasks();
-
-wrapper.addEventListener('mouseenter', function() {
-    sceneryImg.style.opacity = '0';
-    portraitImg.style.opacity = '1';
-
-});
