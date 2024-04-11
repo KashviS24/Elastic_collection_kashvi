@@ -24,19 +24,19 @@ const tasks = [
     },
     {
       "title": "Green",
-      "type": ["all","India", "India"],
+      "type": ["all","Europe", "India"],
       "portrait": "portraits/portrait3.jpg",
       "scenery": "sceneries/scenery3.jpg"
     },
     {
       "title": "Yellow",
-      "type": ["all","Europe", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait4.jpg",
       "scenery": "sceneries/scenery4.jpg"
     },
     {
       "title": "Orange",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait5.jpg",
       "scenery": "sceneries/scenery5.jpg"
     },
@@ -54,19 +54,19 @@ const tasks = [
     },
     {
       "title": "Turquoise",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait8.jpg",
       "scenery": "sceneries/scenery8.jpg"
     },
     {
       "title": "Cyan",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait9.jpg",
       "scenery": "sceneries/scenery9.jpg"
     },
     {
       "title": "Magenta",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait10.jpg",
       "scenery": "sceneries/scenery10.jpg"
     },
@@ -84,13 +84,13 @@ const tasks = [
     },
     {
       "title": "Violet",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait13.jpg",
       "scenery": "sceneries/scenery13.jpg"
     },
     {
       "title": "Maroon",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait14.jpg",
       "scenery": "sceneries/scenery14.jpg"
     },
@@ -102,7 +102,7 @@ const tasks = [
     },
     {
       "title": "Coral",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait16.jpg",
       "scenery": "sceneries/scenery16.jpg"
     },
@@ -162,13 +162,13 @@ const tasks = [
     },
     {
       "title": "Ivory",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait26.jpg",
       "scenery": "sceneries/scenery26.jpg"
     },
     {
       "title": "Slate",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait27.jpg",
       "scenery": "sceneries/scenery27.jpg"
     },
@@ -192,19 +192,19 @@ const tasks = [
     },
     {
       "title": "Emerald",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait31.jpg",
       "scenery": "sceneries/scenery31.jpg"
     },
     {
       "title": "Sapphire",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait32.jpg",
       "scenery": "sceneries/scenery32.jpg"
     },
     {
       "title": "Azure",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait33.jpg",
       "scenery": "sceneries/scenery33.jpg"
     },
@@ -216,13 +216,13 @@ const tasks = [
     },
     {
       "title": "Mint",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait35.jpg",
       "scenery": "sceneries/scenery35.jpg"
     },
     {
       "title": "Lilac",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait36.jpg",
       "scenery": "sceneries/scenery36.jpg"
     },
@@ -246,7 +246,7 @@ const tasks = [
     },
     {
       "title": "Aquamarine",
-      "type": ["all","USA", "Europe"],
+      "type": ["all","Europe", "Europe"],
       "portrait": "portraits/portrait40.jpg",
       "scenery": "sceneries/scenery40.jpg"
     },
@@ -258,13 +258,13 @@ const tasks = [
     },
     {
       "title": "Orchid",
-      "type": ["all","India", "Europe"],
+      "type": ["all","USA", "Europe"],
       "portrait": "portraits/portrait42.jpg",
       "scenery": "sceneries/scenery42.jpg"
     },
     {
       "title": "Salmon",
-      "type": ["all","USA", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait43.jpg",
       "scenery": "sceneries/scenery43.jpg"
     },
@@ -276,13 +276,13 @@ const tasks = [
     },
     {
       "title": "Navy",
-      "type": ["all","Europe", "USA"],
+      "type": ["all","India", "USA"],
       "portrait": "portraits/portrait45.jpg",
       "scenery": "sceneries/scenery45.jpg"
     },
     {
       "title": "Mustard",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait46.jpg",
       "scenery": "sceneries/scenery46.jpg"
     },
@@ -294,19 +294,19 @@ const tasks = [
     },
     {
       "title": "Rose",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait48.jpg",
       "scenery": "sceneries/scenery48.jpg"
     },
     {
       "title": "Sand",
-      "type": ["all","India", "Europe"],
+      "type": ["all","USA", "Europe"],
       "portrait": "portraits/portrait49.jpg",
       "scenery": "sceneries/scenery49.jpg"
     },
     {
       "title": "Coral Reef",
-      "type": ["all","India", "USA"],
+      "type": ["all","USA", "USA"],
       "portrait": "portraits/portrait50.jpg",
       "scenery": "sceneries/scenery50.jpg"
     }
@@ -377,10 +377,13 @@ function handleLocationFilterChange() {
 function initializeEventListeners() {
     filters.location.addEventListener('change', handleLocationFilterChange);
 
-    // Add click event listener to tasks container
+    console.log("Initializing event listener...");
+    console.log(tasksContainer);
+    
     tasksContainer.addEventListener("click", function(event) {
-        // Check if the clicked element is an image
-        if (event.target.tagName === "IMG") {
+        console.log("Click event detected on tasks container.");
+        if (event.target.closest(".task")) {
+            console.log("Clicked on a task.");
             addRandomTask();
         }
     });
