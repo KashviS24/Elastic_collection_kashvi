@@ -337,10 +337,14 @@ function generateTask(task) {
 
     const titlePara = document.createElement('p');
     titlePara.textContent = task.title;
+    titlePara.classList.add('title');
 
     taskElement.appendChild(sceneryImg);
     taskElement.appendChild(portraitImg);
     taskElement.appendChild(titlePara);
+
+    const imgHeight = Math.max(sceneryImg.clientHeight, portraitImg.clientHeight);
+    titlePara.style.top = imgHeight + 'px';
 
     return taskElement;
 }
