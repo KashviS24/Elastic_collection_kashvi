@@ -312,7 +312,7 @@ const tasks = [
     }
   ];
 
-shuffle(tasks);
+  shuffle(tasks);
   
   const filters = {
     location: document.querySelector('#location-filter')
@@ -322,13 +322,36 @@ const tasksContainer = document.querySelector('#tasks');
 let selectedLocation = 'all';
 
 function generateTask(task) {
-    return `
-        <div class="task">
-            <img src="${task.scenery}" alt="${task.title}" class="scenery">
-            <img src="${task.portrait}" alt="${task.title}" class="portrait">
-            <p>${task.title}</p>
-        </div>
-    `;
+    const taskElement = document.createElement('div');
+    taskElement.classList.add('task');
+
+    const sceneryImg = document.createElement('img');
+    sceneryImg.src = task.scenery;
+    sceneryImg.alt = task.title;
+    sceneryImg.classList.add('scenery');
+
+    const portraitImg = document.createElement('img');
+    portraitImg.src = task.portrait;
+    portraitImg.alt = task.title;
+    portraitImg.classList.add('portrait');
+
+    const titlePara = document.createElement('p');
+    titlePara.textContent = task.title;
+
+    taskElement.appendChild(sceneryImg);
+    taskElement.appendChild(portraitImg);
+    taskElement.appendChild(titlePara);
+
+    return taskElement;
+}
+
+function renderInitialTask() {
+    tasksContainer.innerHTML = '';
+
+    const randomIndex = Math.floor(Math.random() * tasks.length);
+    const randomTask = tasks[randomIndex];
+    const taskElement = generateTask(randomTask);
+    tasksContainer.appendChild(taskElement);
 }
 
 function renderTasks() {
@@ -337,7 +360,8 @@ function renderTasks() {
     const filteredTasks = tasks.filter(task => selectedLocation === 'all' || task.type.includes(selectedLocation));
 
     filteredTasks.forEach(task => {
-        tasksContainer.innerHTML += generateTask(task);
+        const taskElement = generateTask(task);
+        tasksContainer.appendChild(taskElement);
     });
 }
 
@@ -348,7 +372,21 @@ function handleLocationFilterChange() {
 
 function initializeEventListeners() {
     filters.location.addEventListener('change', handleLocationFilterChange);
+
+    // Add click event listener to tasks container
+    tasksContainer.addEventListener("click", function(event) {
+        // Check if the clicked element is an image
+        if (event.target.tagName === "IMG") {
+            addRandomTask();
+        }
+    });
+}
+
+function addRandomTask() {
+    const randomIndex = Math.floor(Math.random() * tasks.length);
+    const randomTask = tasks[randomIndex];
+    tasksContainer.appendChild(generateTask(randomTask));
 }
 
 initializeEventListeners();
-renderTasks();
+renderInitialTask();

@@ -47,12 +47,11 @@ h1 {
     margin-bottom: 1px;
 }
 
-.task .p{
+#tasks .p{
     z-index: 5;
-    text-align: center;
-    position: relative;
-    float: left;
-    clear: both;
+    bottom: 0;
+    position: absolute;
+    float: right;
 }
 
 .task .scenery {
