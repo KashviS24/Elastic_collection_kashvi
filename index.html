@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kashvi's Collection for Studio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kashvi's collection</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>Travel and Home</h1>
+    <h1>Where did I take these pictures?</h1>
 
-  <div id="randomObjectsContainer"></div>
-
-  <script src="script.js"></script>
+    <div id="controls">
+        <div class="row-flexbox">
+            <label for="location-filter">Location:</label>
+            <select id="location-filter">
+                <option value="all">All</option>
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+                <option value="Europe">Europe</option>
+            </select>
+        </div>
+    </div>
+    <div id="tasks"></div>
 </body>
+<script defer src="script.js"></script>
+
 </html>

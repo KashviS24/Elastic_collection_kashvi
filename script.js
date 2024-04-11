@@ -1,188 +1,347 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Fetch JSON data
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            // Event listener for click on figure
-            document.addEventListener('click', function(event) {
-                if (event.target.closest('figure')) {
-                    const newRandomIndex = Math.floor(Math.random() * data.length);
-                    const newRandomObject = data[newRandomIndex];
-                    renderMarkup(newRandomObject);
-                }
-            });
-
-            // Initial rendering
-            renderRandomObject(data);
-        })
-        .catch(error => console.error('Error fetching data:', error));
-
-    // Function to render a random object
-    function renderRandomObject(data) {
-        let randomIndex = Math.floor(Math.random() * data.length);
-        const randomObject = data[randomIndex];
-        renderMarkup(randomObject);
+const tasks = [
+    {
+      "title": "Red",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait1.jpg",
+      "scenery": "sceneries/scenery1.jpg"
+    },
+    {
+      "title": "Blue",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait2.jpg",
+      "scenery": "sceneries/scenery2.jpg"
+    },
+    {
+      "title": "Green",
+      "type": ["all","India", "India"],
+      "portrait": "portraits/portrait3.jpg",
+      "scenery": "sceneries/scenery3.jpg"
+    },
+    {
+      "title": "Yellow",
+      "type": ["all","Europe", "USA"],
+      "portrait": "portraits/portrait4.jpg",
+      "scenery": "sceneries/scenery4.jpg"
+    },
+    {
+      "title": "Orange",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait5.jpg",
+      "scenery": "sceneries/scenery5.jpg"
+    },
+    {
+      "title": "Purple",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait6.jpg",
+      "scenery": "sceneries/scenery6.jpg"
+    },
+    {
+      "title": "Pink",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait7.jpg",
+      "scenery": "sceneries/scenery7.jpg"
+    },
+    {
+      "title": "Turquoise",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait8.jpg",
+      "scenery": "sceneries/scenery8.jpg"
+    },
+    {
+      "title": "Cyan",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait9.jpg",
+      "scenery": "sceneries/scenery9.jpg"
+    },
+    {
+      "title": "Magenta",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait10.jpg",
+      "scenery": "sceneries/scenery10.jpg"
+    },
+    {
+      "title": "Lavender",
+      "type": ["all","India", "India"],
+      "portrait": "portraits/portrait11.jpg",
+      "scenery": "sceneries/scenery11.jpg"
+    },
+    {
+      "title": "Indigo",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait12.jpg",
+      "scenery": "sceneries/scenery12.jpg"
+    },
+    {
+      "title": "Violet",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait13.jpg",
+      "scenery": "sceneries/scenery13.jpg"
+    },
+    {
+      "title": "Maroon",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait14.jpg",
+      "scenery": "sceneries/scenery14.jpg"
+    },
+    {
+      "title": "Teal",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait15.jpg",
+      "scenery": "sceneries/scenery15.jpg"
+    },
+    {
+      "title": "Coral",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait16.jpg",
+      "scenery": "sceneries/scenery16.jpg"
+    },
+    {
+      "title": "Olive",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait17.jpg",
+      "scenery": "sceneries/scenery17.jpg"
+    },
+    {
+      "title": "Peach",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait18.jpg",
+      "scenery": "sceneries/scenery18.jpg"
+    },
+    {
+      "title": "Gold",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait19.jpg",
+      "scenery": "sceneries/scenery19.jpg"
+    },
+    {
+      "title": "Silver",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait20.jpg",
+      "scenery": "sceneries/scenery20.jpg"
+    },
+    {
+      "title": "Charcoal",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait21.jpg",
+      "scenery": "sceneries/scenery21.jpg"
+    },
+    {
+      "title": "Beige",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait22.jpg",
+      "scenery": "sceneries/scenery22.jpg"
+    },
+    {
+      "title": "Brown",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait23.jpg",
+      "scenery": "sceneries/scenery23.jpg"
+    },
+    {
+      "title": "Tan",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait24.jpg",
+      "scenery": "sceneries/scenery24.jpg"
+    },
+    {
+      "title": "Cream",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait25.jpg",
+      "scenery": "sceneries/scenery25.jpg"
+    },
+    {
+      "title": "Ivory",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait26.jpg",
+      "scenery": "sceneries/scenery26.jpg"
+    },
+    {
+      "title": "Slate",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait27.jpg",
+      "scenery": "sceneries/scenery27.jpg"
+    },
+    {
+      "title": "Periwinkle",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait28.jpg",
+      "scenery": "sceneries/scenery28.jpg"
+    },
+    {
+      "title": "Crimson",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait29.jpg",
+      "scenery": "sceneries/scenery29.jpg"
+    },
+    {
+      "title": "Ruby",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait30.jpg",
+      "scenery": "sceneries/scenery30.jpg"
+    },
+    {
+      "title": "Emerald",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait31.jpg",
+      "scenery": "sceneries/scenery31.jpg"
+    },
+    {
+      "title": "Sapphire",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait32.jpg",
+      "scenery": "sceneries/scenery32.jpg"
+    },
+    {
+      "title": "Azure",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait33.jpg",
+      "scenery": "sceneries/scenery33.jpg"
+    },
+    {
+      "title": "Lemon",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait34.jpg",
+      "scenery": "sceneries/scenery34.jpg"
+    },
+    {
+      "title": "Mint",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait35.jpg",
+      "scenery": "sceneries/scenery35.jpg"
+    },
+    {
+      "title": "Lilac",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait36.jpg",
+      "scenery": "sceneries/scenery36.jpg"
+    },
+    {
+      "title": "Tangerine",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait37.jpg",
+      "scenery": "sceneries/scenery37.jpg"
+    },
+    {
+      "title": "Fuchsia",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait38.jpg",
+      "scenery": "sceneries/scenery38.jpg"
+    },
+    {
+      "title": "Burgundy",
+      "type": ["all","USA", "Europe"],
+      "portrait": "portraits/portrait39.jpg",
+      "scenery": "sceneries/scenery39.jpg"
+    },
+    {
+      "title": "Aquamarine",
+      "type": ["all","USA", "Europe"],
+      "portrait": "portraits/portrait40.jpg",
+      "scenery": "sceneries/scenery40.jpg"
+    },
+    {
+      "title": "Mauve",
+      "type": ["all","India", "Europe"],
+      "portrait": "portraits/portrait41.jpg",
+      "scenery": "sceneries/scenery41.jpg"
+    },
+    {
+      "title": "Orchid",
+      "type": ["all","India", "Europe"],
+      "portrait": "portraits/portrait42.jpg",
+      "scenery": "sceneries/scenery42.jpg"
+    },
+    {
+      "title": "Salmon",
+      "type": ["all","USA", "USA"],
+      "portrait": "portraits/portrait43.jpg",
+      "scenery": "sceneries/scenery43.jpg"
+    },
+    {
+      "title": "Sky Blue",
+      "type": ["all","Europe", "USA"],
+      "portrait": "portraits/portrait44.jpg",
+      "scenery": "sceneries/scenery44.jpg"
+    },
+    {
+      "title": "Navy",
+      "type": ["all","Europe", "USA"],
+      "portrait": "portraits/portrait45.jpg",
+      "scenery": "sceneries/scenery45.jpg"
+    },
+    {
+      "title": "Mustard",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait46.jpg",
+      "scenery": "sceneries/scenery46.jpg"
+    },
+    {
+      "title": "Olive Green",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait47.jpg",
+      "scenery": "sceneries/scenery47.jpg"
+    },
+    {
+      "title": "Rose",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait48.jpg",
+      "scenery": "sceneries/scenery48.jpg"
+    },
+    {
+      "title": "Sand",
+      "type": ["all","India", "Europe"],
+      "portrait": "portraits/portrait49.jpg",
+      "scenery": "sceneries/scenery49.jpg"
+    },
+    {
+      "title": "Coral Reef",
+      "type": ["all","India", "USA"],
+      "portrait": "portraits/portrait50.jpg",
+      "scenery": "sceneries/scenery50.jpg"
     }
+  ];
 
-    // Function to render markup
-    function renderMarkup(object) {
-        const wrapper = document.createElement('figure');
-        wrapper.style.backgroundColor = 'black';
-        wrapper.style.height = '13em';
-        wrapper.style.width = '13em';
-        wrapper.style.float = 'left';
+  const filters = {
+    location: document.querySelector('#location-filter')
+};
 
-        // Type
-        wrapper.dataset.item = object.type;
+const tasksContainer = document.querySelector('#tasks');
+let selectedLocation = 'all';
 
-        // Title
-        const titleLink = document.createElement('a');
-        titleLink.href = object.title;
-        titleLink.textContent = object.title;
-        const figCaption = document.createElement('figcaption');
-        figCaption.style.textDecoration = 'none';
-        figCaption.appendChild(titleLink);
-        wrapper.appendChild(figCaption);
+function generateTask(task) {
+    return `
+        <div class="task">
+            <p>${task.title}</p>
+            <img src="${task.portrait}" alt="${task.title}">
+            <img src="${task.scenery}" alt="${task.title}">
+        </div>
+    `;
+}
 
-        // Container for images
-        const imagesContainer = document.createElement('div');
-        imagesContainer.classList.add('images-container'); // Add class
-        imagesContainer.style.position = 'relative';
-        imagesContainer.style.width = '100%';
-        imagesContainer.style.height = '100%';
-        wrapper.appendChild(imagesContainer);
+function renderTasks() {
+    tasksContainer.innerHTML = '';
 
-        // Scenery
-        const sceneryImg = document.createElement('img');
-        sceneryImg.src = object.scenery;
-        sceneryImg.style.position = 'absolute';
-        sceneryImg.style.top = '50%';
-        sceneryImg.style.left = '50%';
-        sceneryImg.style.transform = 'translate(-50%, -50%)';
-        sceneryImg.style.opacity = '1'; // Set default opacity to 1
-        imagesContainer.appendChild(sceneryImg);
+    const filteredTasks = tasks.filter(task => selectedLocation === 'all' || task.type.includes(selectedLocation));
 
-        // Portrait
-        const portraitImg = document.createElement('img');
-        portraitImg.src = object.portrait;
-        portraitImg.classList.add('portrait-img'); 
-        portraitImg.style.position = 'absolute';
-        portraitImg.style.top = '50%';
-        portraitImg.style.left = '50%';
-        portraitImg.style.transform = 'translate(-50%, -50%)';
-        portraitImg.style.opacity = '0'; // Set default opacity to 0
-        imagesContainer.appendChild(portraitImg);
-
-        // Add event listeners for hover effect
-        wrapper.addEventListener('mouseenter', function() {
-            sceneryImg.style.opacity = '0'; // Hide scenery image on hover
-            portraitImg.style.opacity = '1'; // Show portrait image on hover
-        });
-
-        wrapper.addEventListener('mouseleave', function() {
-            sceneryImg.style.opacity = '1'; // Show scenery image on mouse leave
-            portraitImg.style.opacity = '0'; // Hide portrait image on mouse leave
-        });
-
-        // Append to DOM
-        document.getElementById('randomObjectsContainer').appendChild(wrapper);
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-    let previousObjects = []; // Track the last 15 generated objects
-    let allObjects = []; // Track all objects for filtering
-
-    // Fetch JSON data
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            allObjects = data; // Store all objects for filtering
-
-            // Event listener for click on figure
-            document.addEventListener('click', function(event) {
-                if (event.target.closest('figure')) {
-                    let newRandomObject = getRandomUniqueObject(data);
-                    renderMarkup(newRandomObject);
-                }
-            });
-
-            // Initial rendering
-            renderObjects(data);
-        })
-        .catch(error => console.error('Error fetching data:', error));
-
-    // Function to render markup
-    function renderMarkup(object) {
-        const wrapper = document.createElement('figure');
-        // Rest of your rendering logic...
-        // ...
-    }
-
-    // Function to render objects based on criteria
-    function renderObjects(objects) {
-        // Clear existing objects
-        document.getElementById('randomObjectsContainer').innerHTML = '';
-        
-        // Render filtered objects
-        objects.forEach(object => {
-            renderMarkup(object);
-        });
-    }
-
-    // Function to filter objects based on criteria
-    function filterObjects(criteria) {
-    const figures = document.querySelectorAll('figure');
-    figures.forEach(figure => {
-        const type = figure.dataset.item; // Get the type of the object
-        if (criteria === 'all' || type === criteria) {
-            // Show the object if it matches the criteria or if 'all' is selected
-            figure.style.display = 'block';
-        } else {
-            // Hide the object if it does not match the criteria
-            figure.style.display = 'none';
-        }
+    filteredTasks.forEach(task => {
+        tasksContainer.innerHTML += generateTask(task);
     });
-    }
+}
 
-    // Function to get a random object that is not too similar to the last 15 objects
-    function getRandomUniqueObject(data) {
-        let newRandomObject = null;
-        do {
-            let randomIndex = Math.floor(Math.random() * data.length);
-            newRandomObject = data[randomIndex];
-        } while (isTooSimilar(newRandomObject, previousObjects));
-        
-        previousObjects.push(newRandomObject);
-        if (previousObjects.length > 15) {
-            previousObjects.shift(); // Remove the oldest object if the history exceeds 15
-        }
-        return newRandomObject;
-    }
+function handleLocationFilterChange() {
+    selectedLocation = filters.location.value;
+    renderTasks();
+}
 
-    // Function to check if a new object is too similar to the last 15 objects
-    function isTooSimilar(newObject, previousObjects) {
-        for (let i = 0; i < previousObjects.length; i++) {
-            // Compare multiple properties to determine similarity
-            if (areObjectsSimilar(newObject, previousObjects[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
+function initializeEventListeners() {
+    filters.location.addEventListener('change', handleLocationFilterChange);
+}
 
-    // Function to check if two objects are similar based on multiple properties
-    function areObjectsSimilar(obj1, obj2) {
-        // You can define your own criteria for similarity here
-        // For example, you can compare titles, types, and other properties
-        // For simplicity, let's compare titles and types
-        if (obj1.title === obj2.title || obj1.type === obj2.type) {
-            return true;
-        }
-        return false;
-    }
-});
+initializeEventListeners();
+renderTasks();
+
+wrapper.addEventListener('mouseenter', function() {
+    sceneryImg.style.opacity = '0';
+    portraitImg.style.opacity = '1';
 
 });
-
-
-

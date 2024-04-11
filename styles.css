@@ -1,6 +1,7 @@
-body{
-    background-color: rgb(46, 48, 44);
-    overflow-x: hidden; 
+body {
+    background-color: #1f221c;
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 @font-face {
@@ -13,62 +14,76 @@ body{
     src: url(Fonts/MaxiRound-Bold.otf);
 }
 
-h1{
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
     font-family: MaxiRound-Bold;
-    text-align: left;
-    color:azure;
-    margin-left: 20px;
+    font-weight: 700;
+    color: azure;
+    text-transform: uppercase;
 }
 
-figcaption {
-    position: absolute;
-    bottom: -1.5em;
-    right: 0;
-    text-align: right;
-    z-index: 4;
+#controls {
+    font-family: MaxiRound-Regular;
+    display: flex;
+    color: azure;
+    justify-content: center;
 }
 
-figure{
-    border-radius: 10%;
-    background-color: black;
-    float: left;
-    position: relative;
+#tasks {
+    font-family: MaxiRound-Bold;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-flexbox {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.task {
     margin: 20px;
-}
-
-.images-container {
+    background-color: #f4f4f4;
+    border-bottom: 1px #ccc dotted;
+    padding: 1rem;
+    text-align: center;
+    width: 13em;
+    height: 13em;
+    border-radius: 1rem;
+    box-shadow: #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
     overflow: hidden;
 }
 
-.images-container img {
-    border-radius: 5%;
+.task p {
+    color: azure;
+    font-size:xx-large;
+    position: absolute;
+    z-index: 2; /* Ensure the text is above the background */
 }
 
-figure img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.task img.scenery {
+    z-index: 1;
     transition: opacity 0.3s ease;
 }
 
-figcaption a {
-    font-family: MaxiRound-Regular;
-    text-decoration: none;
-    color: white;
+.task:hover img.scenery {
+    opacity: 0.5;
 }
 
-.filters{
-    width: 100vw;
-    height: 40px;
-}
-
-.filters button{
-    color: azure;
-    background-color: black;
-    font-family: MaxiRound-Regular;
-    float: left;
-    border-radius: 45%;
-    padding: 15px;
-    margin: 1px;
+.task img {
+    position: absolute;
+    align-items: center;
+    width: 23em;
+    height: auto;
 }
