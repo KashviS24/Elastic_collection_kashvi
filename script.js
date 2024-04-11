@@ -311,9 +311,9 @@ let selectedLocation = 'all';
 function generateTask(task) {
     return `
         <div class="task">
+            <img src="${task.scenery}" alt="${task.title}" class="scenery">
+            <img src="${task.portrait}" alt="${task.title}" class="portrait">
             <p>${task.title}</p>
-            <img src="${task.scenery}" alt="${task.title}" class="scenery"> <!-- Scenery image -->
-            <img src="${task.portrait}" alt="${task.title}" class="portrait"> <!-- Portrait image -->
         </div>
     `;
 }
