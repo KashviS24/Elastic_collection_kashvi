@@ -15,11 +15,17 @@ body {
     src: url(Fonts/MaxiRound-Bold.otf);
 }
 
-.dropdown-colors{
+.dropdown-box{
+    background-color: azure;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
     position: sticky;
     float: right;
-    top: 20px;
+    top: 40px;
+    font-family: MaxiRound-Regular;
     z-index: 6;
+    border-radius: 2%;
 }
 
 h1 {
