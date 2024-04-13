@@ -11,15 +11,19 @@
 <body>
     <h1>Where did I take these pictures?</h1>
 
-    <select class="dropdown-box" id="color-dropdown" onchange="navigateToPage()">
-      <option value="">Match the color</option>
-    </select>
-    <p class="information">Turn sound on and have fun clicking away and use the dropdown to match colors and get more information about the pictures</p>
-    <p class="information">You can filter the photos by location too!</p>
     <audio id="clickSound">
       <source src="Fonts/camera-click.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
+
+    <div class="dropdown-box">
+      <button class="dropdown-button">Match the color</button>
+      <div class="dropdown-content" id="color-dropdown"></div>
+    </div>
+
+    <p class="information">Turn your sound on and have fun clicking away :)</p> 
+    <p class="information">You can use the dropdown to match colors and get more information about the pictures</p>
+    <p class="information">You can filter the photos by location too!</p>
 
     <div id="controls">
         <div class="row-flexbox">

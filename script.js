@@ -488,3 +488,84 @@ function initializeEventListeners() {
 
 initializeEventListeners();
 renderInitialTask();
+
+window.onload = function() {
+    const colorDropdown = document.getElementById('color-dropdown');
+    const colors = [
+        { name: "Red", hex: "#FF0000", page: "entry-1.html" },
+        { name: "Blue", hex: "#0000FF", page: "entry-2.html" },
+        { name: "Green", hex: "#008000", page: "entry-3.html" },
+        { name: "Yellow", hex: "#FFFF00", page: "entry-4.html" },
+        { name: "Orange", hex: "#FFA500", page: "entry-5.html" },
+        { name: "Purple", hex: "#800080", page: "entry-6.html" },
+        { name: "Pink", hex: "#FFC0CB", page: "entry-7.html" },
+        { name: "Turquoise", hex: "#40E0D0", page: "entry-8.html" },
+        { name: "Cyan", hex: "#00FFFF", page: "entry-9.html" },
+        { name: "Magenta", hex: "#FF00FF", page: "entry-10.html" },
+        { name: "Lavender", hex: "#E6E6FA", page: "entry-11.html" },
+        { name: "Indigo", hex: "#4B0082", page: "entry-12.html" },
+        { name: "Violet", hex: "#8A2BE2", page: "entry-13.html" },
+        { name: "Maroon", hex: "#800000", page: "entry-14.html" },
+        { name: "Teal", hex: "#008080", page: "entry-15.html" },
+        { name: "Coral", hex: "#FF7F50", page: "entry-16.html" },
+        { name: "Olive", hex: "#808000", page: "entry-17.html" },
+        { name: "Peach", hex: "#FFE5B4", page: "entry-18.html" },
+        { name: "Gold", hex: "#FFD700", page: "entry-19.html" },
+        { name: "Silver", hex: "#C0C0C0", page: "entry-20.html" },
+        { name: "Charcoal", hex: "#36454F", page: "entry-21.html" },
+        { name: "Beige", hex: "#F5F5DC", page: "entry-22.html" },
+        { name: "Brown", hex: "#A52A2A", page: "entry-23.html" },
+        { name: "Tan", hex: "#D2B48C", page: "entry-24.html" },
+        { name: "Cream", hex: "#FFFDD0", page: "entry-25.html" },
+        { name: "Ivory", hex: "#FFFFF0", page: "entry-26.html" },
+        { name: "Slate", hex: "#708090", page: "entry-27.html" },
+        { name: "Periwinkle", hex: "#CCCCFF", page: "entry-28.html" },
+        { name: "Crimson", hex: "#DC143C", page: "entry-29.html" },
+        { name: "Ruby", hex: "#E0115F", page: "entry-30.html" },
+        { name: "Emerald", hex: "#50C878", page: "entry-31.html" },
+        { name: "Sapphire", hex: "#0F52BA", page: "entry-32.html" },
+        { name: "Azure", hex: "#007FFF", page: "entry-33.html" },
+        { name: "Lemon", hex: "#FFF700", page: "entry-34.html" },
+        { name: "Mint", hex: "#3EB489", page: "entry-35.html" },
+        { name: "Lilac", hex: "#C8A2C8", page: "entry-36.html" },
+        { name: "Tangerine", hex: "#F28500", page: "entry-37.html" },
+        { name: "Fuchsia", hex: "#FF00FF", page: "entry-38.html" },
+        { name: "Burgundy", hex: "#800020", page: "entry-39.html" },
+        { name: "Aquamarine", hex: "#7FFFD4", page: "entry-40.html" },
+        { name: "Mauve", hex: "#E0B0FF", page: "entry-41.html" },
+        { name: "Orchid", hex: "#DA70D6", page: "entry-42.html" },
+        { name: "Salmon", hex: "#FA8072", page: "entry-43.html" },
+        { name: "Sky Blue", hex: "#87CEEB", page: "entry-44.html" },
+        { name: "Navy", hex: "#000080", page: "entry-45.html" },
+        { name: "Mustard", hex: "#FFDB58", page: "entry-46.html" },
+        { name: "Sand", hex: "#C2B280", page: "entry-47.html" },
+        { name: "Coral Reef", hex: "#FD7C6E", page: "entry-48.html" },
+        { name: "Olive Green", hex: "#808000", page: "entry-49.html" },
+        { name: "Rose", hex: "#FF007F", page: "entry-50.html" }
+    ];
+
+    colors.forEach(color => {
+        const option = document.createElement('div');
+        option.className = 'dropdown-option';
+        option.textContent = color.name;
+        option.style.backgroundColor = color.hex;
+        option.dataset.page = color.page;
+        colorDropdown.appendChild(option);
+    });
+
+    const dropdownButton = document.querySelector('.dropdown-button');
+    dropdownButton.addEventListener('click', function() {
+        const dropdownContent = document.querySelector('.dropdown-content');
+        dropdownContent.classList.toggle('show');
+    });
+
+    const dropdownOptions = document.querySelectorAll('.dropdown-option');
+    dropdownOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const page = this.dataset.page;
+            if (page) {
+                window.location.href = page;
+            }
+        });
+    });
+};
