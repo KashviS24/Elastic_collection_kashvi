@@ -129,11 +129,24 @@ h1 {
 }
 
 .image-container{
-    justify-content: space-between;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 90vh;
 }
 
 .image-container img{
     text-align: center;
     padding: 20px;
     width: 32em;
+        max-width: 90%; /* Adjust this value as needed */
+        height: auto;
+}
+
+#topRightIcon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    cursor: default;
 }
